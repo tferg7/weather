@@ -2,55 +2,55 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="./assets/style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <title>Weather</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Current weather, UV index, and a 5-day forecast for any city.">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid text-center text-light bg-dark">
-        <h1>Weather</h1>
-    </div>
-    <div class="container">
-            <div class="col-4 float-left">
-                    <h4>Weather by City:</h4>
-                    <form class="form-inline">
-                        <input id="city-input" class="form-control mr-sm-2" type="search" placeholder="Search"
-                            aria-label="Search">
-                        <button id="select-city" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    <header class="site-header">
+        <h1>Weather Dashboard</h1>
+        <p>Current conditions, UV index, and a 5-day forecast for any city.</p>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <!-- search and history -->
+            <aside class="col-lg-4 mb-4">
+                <div class="panel">
+                    <h2 class="h5">Search for a city</h2>
+                    <form class="d-flex">
+                        <label for="city-input" class="sr-only">City</label>
+                        <input id="city-input" class="form-control mr-2" type="search" placeholder="e.g. Baton Rouge" autocomplete="off">
+                        <button id="select-city" class="btn btn-primary" type="submit">Search</button>
                     </form>
-                    <!--search history section-->
-                    <form id="searchhistory" class="mt-1">
-                        <!---------------------- Search history inserts here  --------------------------------->
-                    </form>
-            </div>
-            <div class="col-8 float-right">
-                <div class="card bg-light text-dark p-2 rem shadow-lg p-3 mb-5 bg-white rounded"
-                    style="min-height: 19rem;">
-                    <div id="current"></div>
-                    <!----------------------  Current weather inserts  here  ------------------------------->
+                    <h3 class="h6 mt-4 mb-2 text-muted">Recent searches</h3>
+                    <div id="searchhistory"></div>
+                </div>
+            </aside>
+
+            <!-- results -->
+            <section class="col-lg-8">
+                <div class="panel current-panel">
+                    <div id="current"><p class="text-muted mb-0">Search for a city to see today's weather.</p></div>
                     <div id="uv"></div>
                 </div>
-                <br>
-                <h2>5-Day Forecast:</h2>
-                <div id="5day" class="row">
-                    <!-------------------  5 Day forecast inserts  here ------------------------------------>
-                </div>
-            </div>
+                <h2 class="h4 mt-4 mb-3 section-title">5-Day Forecast</h2>
+                <div id="5day" class="forecast"></div>
+            </section>
         </div>
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-        crossorigin="anonymous"></script>
-    <script type="text/javascript" src="./assets/script.js"></script>
+    </main>
+
+    <footer class="site-footer">
+        Weather data from <a href="https://openweathermap.org/">OpenWeather</a> · UV index from <a href="https://open-meteo.com/">Open-Meteo</a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script src="./assets/script.js"></script>
 </body>
 
 </html>
