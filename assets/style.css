@@ -1,49 +1,84 @@
+html {
+  background: #2a5298;
+}
+
 body {
-
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #222;
-    /* Unsplash Source (random photo URLs) was shut down, so use a sky gradient */
-    background-image: linear-gradient(160deg, #1e3c72 0%, #2a5298 50%, #6dd5ed 100%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-size: 120%;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
-  .container {
-    background: #000000d0;
-    color: white;
-    padding: 2em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 420px;
-    margin: 1em;
-  }
-
-  /* Mobile */
-
-  @media only screen and (max-width: 768px){
-  body {
-      display:flex;
-      flex-wrap: wrap;
-     
-    }
-.container {
-  display: flex;
-  display: inline;
-  background:none;
-}
-.row{
-  height: fit-content;
-  width: fit-content;
-  margin: none;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: #1f2937;
+  background-image: linear-gradient(160deg, #1e3c72 0%, #2a5298 50%, #6dd5ed 100%);
+  background-attachment: fixed;
 }
 
-  }
-    
-  
+.site-header {
+  text-align: center;
+  color: #fff;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.site-header h1 {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.site-header p {
+  opacity: 0.85;
+  margin: 0;
+}
+
+.panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.current-panel {
+  min-height: 12rem;
+}
+
+.current-panel h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.section-title {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* search history buttons */
+#searchhistory .btn {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+/* 5-day forecast cards wrap on small screens */
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.forecast .card {
+  width: auto !important;
+  margin: 0 !important;
+  border-radius: 14px;
+}
+
+.site-footer {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: underline;
+}
+
 /* UV index "high" band */
 .bg-orange {
   background-color: #fd7e14;

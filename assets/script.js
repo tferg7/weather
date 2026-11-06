@@ -93,7 +93,7 @@ function getForecast(queryURLforecast) {
     }
 
     middays.slice(0, 5).forEach(function (item) {
-      var fiveDayDiv = $("<div class='card shadow-lg text-white bg-primary mx-auto mb-3 p-2' style='width: 8.5rem;'>");
+      var fiveDayDiv = $("<div class='card shadow-lg text-white bg-primary p-2'>");
       var h5date = $("<h5 class='card-title'>").text(moment(item.dt_txt).format("ddd M/D"));
       var pTemp = $("<p class='card-text'>").text("Temp: " + Math.round(item.main.temp) + " °F");
       var pHum = $("<p class='card-text'>").text("Humidity: " + item.main.humidity + "%");
@@ -131,7 +131,7 @@ function addToHistory(city) {
 function renderHistory() {
   var $history = $("#searchhistory").empty();
   getHistory().forEach(function (city) {
-    var btn = $("<button type='button' class='btn border text-muted mt-1 shadow-sm bg-white rounded d-block' style='width: 12rem;'>").text(city);
+    var btn = $("<button type='button' class='btn btn-light border'>").text(city);
     $history.append(btn);
   });
 }
